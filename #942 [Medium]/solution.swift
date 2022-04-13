@@ -14,11 +14,11 @@ class Stack {
     var top: Character? { return arr.last}
     var count: Int { return arr.count }
     
-    // Insert at rear
+    // Insert at top
     func push(elem: Character) { arr.append(elem) }
     
-    // Delete at front
-    func pop() { if arr.count > 0 { arr.remove(at: 0) } }
+    // Delete at top
+    func pop() { if arr.count > 0 { arr.remove(at: count-1) } }
 }
 
 func minimunParantheses(input: String){
