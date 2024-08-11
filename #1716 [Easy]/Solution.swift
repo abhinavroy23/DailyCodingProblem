@@ -35,3 +35,22 @@ You should print out the following:
 ```
 
 */
+
+func printMatrixInZigZagOrder(input : [[Int]]) {
+    for (i, rowArray) in input.enumerated() {
+        if i % 2 == 0 { // Even row, print left to right
+            for j in 0..<rowArray.count {
+                print(rowArray[j])
+            }
+        } else { // Odd Row, print right to left
+            for j in stride(from: rowArray.count-1, through: 0, by: -1) {
+                print(rowArray[j])
+            }
+        }
+    }
+}
+
+printMatrixInZigZagOrder([[1,  2,  3,  4,  5],
+ [6,  7,  8,  9,  10],
+ [11, 12, 13, 14, 15],
+ [16, 17, 18, 19, 20]])
